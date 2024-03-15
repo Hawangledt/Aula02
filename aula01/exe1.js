@@ -7,16 +7,7 @@ let listaDeTarefas = [
 
 function adicionarTarefa(descricao) {
 
-    // let novoId =  listaDeTarefas.at(-1).id
-
-    let novoId = listaDeTarefas    
-
-    let tarefa = listaDeTarefas.find(tarefa => tarefa.id === novoId);
-
-    while(tarefa){
-        novoId++;
-        tarefa = listaDeTarefas.find(tarefa => tarefa.id === novoId);
-    }
+    let novoId =  listaDeTarefas.at(-1).id + 1
 
     const novaTarefa = {
         id: novoId,
@@ -59,15 +50,3 @@ function exibirTarefas() {
             `ID: ${tarefa.id}, Descrição: ${tarefa.descricao}, Concluída: ${tarefa.concluida ? 'Sim' : 'Não'}`);
     });
 }
-
-exibirTarefas()
-adicionarTarefa("Nova tarefa!")
-exibirTarefas()
-removerTarefa(3)
-removerTarefa(2)
-removerTarefa(1)
-exibirTarefas()
-adicionarTarefa("Nova tarefa 2!")
-adicionarTarefa("Nova tarefa 2!")
-adicionarTarefa("Nova tarefa 2!")
-exibirTarefas()
